@@ -9,7 +9,8 @@ const fs = require("fs");
 const app = express();
 
 app.use(express.static(path.join(__dirname, "assets")));
-
+app.set('view engine', 'ejs'); 
+app.set('views', path.join(__dirname, 'views')); // views 디렉토리의 절대 경로 설정
 const session = require("express-session");
 app.use(
   session({
